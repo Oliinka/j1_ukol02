@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: dev.czechitas.java1:turtle-engine:1.0.1" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="dev.czechitas.java1" artifactId="turtle-engine" version="1.0.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.czechitas.java1/turtle-engine/1.0.1/bb6a3b921f4fa32386d43f8eda280dd4ab6e068c/turtle-engine-1.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
