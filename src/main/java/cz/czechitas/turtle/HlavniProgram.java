@@ -12,56 +12,37 @@ public class HlavniProgram {
     }
 
     public void start() {
-        //TODO Tady bude kód pro kreslení želví grafiky.
+        //TODO Here we have a code to draw turtles' graphic.
 
 
         //MOVE TO SPECIFIC COORDINATES
         zofka.setX(200);
         zofka.setY(100);
 
-        //ICE CREAM
-        zofka.turnLeft(180);
-        drawTriangle(150, 80, Color.CYAN);
-        zofka.turnRight(90);
-        zofka.move(80);
-        zofka.turnRight(90);
-        drawCircle(40, Color.PINK);
+        drawIceCream();
 
         //MOVE TO SPECIFIC COORDINATES
         zofka.setX(350);
         zofka.setY(50);
 
-        //SNOWMAN
-        drawSnowmanBody(40, Color.BLUE);
-        zofka.move(40 + 20 + (40 + 40) * 2);
-        zofka.turnLeft(90);
-        zofka.move(40 + 20 + 20 + 20);
-        zofka.turnRight(90);
-        drawCircle(20, Color.BLUE);
-        zofka.turnRight(90);
-        zofka.move(20 * 2 + (40 + 20) * 2);
-        zofka.turnLeft(90);
-        drawCircle(20, Color.BLUE);
+        drawSnowman();
 
         //MOVE TO SPECIFIC COORDINATES
         zofka.setX(600);
         zofka.setY(300);
 
-        //TRAIN
         drawTrain();
-
     }
 
     public void drawRectangle(int sideA, int sideB, Color color) {
         zofka.setPenColor(color);
         zofka.penDown();
         for (int i = 0; i < 2; i++) {
-            zofka.move(sideA);    // Move forward by 100 units (assuming 'zofka' is an instance of a turtle)
+            zofka.move(sideA);
             zofka.turnRight(90);
-            zofka.move(sideB);    // Move forward by 100 units (assuming 'zofka' is an instance of a turtle)
+            zofka.move(sideB);
             zofka.turnRight(90);
-
-        }// Turn left by 90 degrees to create the square shape
+        }
         zofka.penUp();
     }
 
@@ -121,7 +102,28 @@ public class HlavniProgram {
         }
     }
 
-    //TRAIN
+    public void drawIceCream() {
+        zofka.turnLeft(180);
+        drawTriangle(150, 80, Color.CYAN);
+        zofka.turnRight(90);
+        zofka.move(80);
+        zofka.turnRight(90);
+        drawCircle(40, Color.PINK);
+    }
+
+    public void drawSnowman() {
+        drawSnowmanBody(40, Color.BLUE);
+        zofka.move(40 + 20 + (40 + 40) * 2);
+        zofka.turnLeft(90);
+        zofka.move(40 + 20 + 20 + 20);
+        zofka.turnRight(90);
+        drawCircle(20, Color.BLUE);
+        zofka.turnRight(90);
+        zofka.move(20 * 2 + (40 + 20) * 2);
+        zofka.turnLeft(90);
+        drawCircle(20, Color.BLUE);
+    }
+
     public void drawTrain() {
         drawRectangle(120, 250, Color.MAGENTA);
         zofka.turnRight(90);
