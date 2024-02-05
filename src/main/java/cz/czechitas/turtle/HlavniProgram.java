@@ -19,7 +19,7 @@ public class HlavniProgram {
         zofka.setX(200);
         zofka.setY(100);
 
-        //ICECREAM
+        //ICE CREAM
         zofka.turnLeft(180);
         drawTriangle(150, 80, Color.CYAN);
         zofka.turnRight(90);
