@@ -24,7 +24,7 @@ public class HlavniProgram {
     zofka.turnRight(90);
     drawCircle(40, Color.PINK);
 
-    zofka.setX(400);
+    zofka.setX(350);
     zofka.setY(50);
 
     //SNOWMAN
@@ -39,21 +39,14 @@ public class HlavniProgram {
     zofka.turnLeft(90);
     drawCircle(20, Color.BLUE);
 
+    zofka.setX(600);
+    zofka.setY(300);
+
     //TRAIN
-
-
+    drawTrain();
 
     }
 
-    public void drawSquare(int sideA, Color color) {
-        zofka.setPenColor(color);
-        zofka.penDown();
-        for (int i = 0; i < 4; i++) {
-            zofka.move(sideA);    // Move forward by 100 units (assuming 'zofka' is an instance of a turtle)
-            zofka.turnRight(90);
-        }// Turn left by 90 degrees to create the square shape
-        zofka.penUp();
-    }
     public void drawRectangle(int sideA, int sideB, Color color) {
         zofka.setPenColor(color);
         zofka.penDown();
@@ -66,6 +59,8 @@ public class HlavniProgram {
         }// Turn left by 90 degrees to create the square shape
         zofka.penUp();
     }
+
+    //FULLY AWARE THAT THIS METHOD IS UNUSED, JUST THINK i MIGHT NEED IT FOR THE NEXT HOMEWORKS
     public void drawEquilateralTriangle(float sideA, Color color) {
         zofka.setPenColor(color);
         zofka.penDown();
@@ -81,26 +76,12 @@ public class HlavniProgram {
         zofka.setPenColor(color);
         zofka.penDown();
         zofka.turnRight(90);
-
-        // Move along the first equal side
         zofka.move(base);
-
-        // Calculate the angle using arctangent
         double angle = Math.atan2(base/2, height);
-
-        // Turn to form the right angle
         zofka.turnLeft(90+Math.toDegrees(angle));
-
-        // Move along the base (hypotenuse)
         zofka.move(Math.hypot(base / 2, height));
-
-        // Turn 90 degrees to form the other right angle
         zofka.turnLeft(180-2*Math.toDegrees(angle));
-
-        // Move back to the starting point along the second equal side
         zofka.move(Math.hypot(base / 2, height));
-
-        // Pen up to finish the drawing
         zofka.penUp();
         zofka.turnRight(180-Math.toDegrees(angle));
     }
@@ -134,21 +115,32 @@ public class HlavniProgram {
         }
     }
 
-        public void drawSnowmannBody(int startingRadius, int numCircles, Color color) {
-            zofka.penUp();
-
-            for (int i = 0; i < numCircles; i++) {
-                drawCircle(startingRadius + i * 20, color);
-                zofka.penUp();
-                zofka.turnRight(180);
-                zofka.move(startingRadius + i * 20);
-                zofka.turnRight(90);
-                zofka.move(startingRadius + (i + 1) * 20);
-                zofka.penDown();
-            }
+    //TRAIN
+     public void drawTrain() {
+            drawRectangle(120,250, Color.MAGENTA);
+            zofka.turnRight(90);
+            zofka.move(250);
+            zofka.turnLeft(90);
+            drawRectangle(200,160, Color.BLACK);
+            drawCircle(80,Color.BLACK);
+            zofka.turnLeft(90);
+            zofka.move(90);
+            zofka.turnLeft(180);
+            drawCircle(40, Color.BLACK);
+            zofka.turnLeft(180);
+            zofka.move(40+30);
+            zofka.turnLeft(90);
+            zofka.move(40);
+            drawCircle(40, Color.BLACK);
+            zofka.turnRight(90);
+            zofka.move(90);
+            zofka.turnRight(90);
+            zofka.move(100);
+            zofka.turnLeft(45);
+            zofka.turnLeft(180);
+            drawTriangle(80,160, Color.MAGENTA);
+            zofka.turnRight(45);
+            zofka.turnRight(180);
         }
-
-
     }
-
 
