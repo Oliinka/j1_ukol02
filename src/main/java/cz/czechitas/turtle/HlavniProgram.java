@@ -15,23 +15,32 @@ public class HlavniProgram {
         //TODO Here we have a code to draw turtles' graphic.
 
 
-        //MOVE TO SPECIFIC COORDINATES
-        zofka.setX(200);
-        zofka.setY(100);
+        setUpCoordinatesToDrawIcecrem();
 
         drawIceCream();
 
-        //MOVE TO SPECIFIC COORDINATES
-        zofka.setX(350);
-        zofka.setY(50);
+        setUpCoordinatesToDrawSnowman();
 
         drawSnowman();
 
-        //MOVE TO SPECIFIC COORDINATES
-        zofka.setX(600);
-        zofka.setY(300);
+        setUpCoordinatesToDrawTrain();
 
         drawTrain();
+    }
+
+    public void setUpCoordinatesToDrawIcecrem() {
+        zofka.setX(200);
+        zofka.setY(100);
+    }
+
+    public void setUpCoordinatesToDrawSnowman() {
+        zofka.setX(350);
+        zofka.setY(50);
+    }
+
+    public void setUpCoordinatesToDrawTrain() {
+        zofka.setX(600);
+        zofka.setY(300);
     }
 
     public void drawRectangle(int sideA, int sideB, Color color) {
@@ -44,18 +53,6 @@ public class HlavniProgram {
             zofka.turnRight(90);
         }
         zofka.penUp();
-    }
-
-    //FULLY AWARE THAT THIS METHOD IS UNUSED, JUST THINK I MIGHT NEED IT FOR NEXT HOMEWORKS
-    public void drawEquilateralTriangle(float sideA, Color color) {
-        zofka.setPenColor(color);
-        zofka.penDown();
-        zofka.turnRight(90);
-        for (int i = 0; i < 3; i++) {
-            zofka.move(sideA);
-            zofka.turnLeft(120);
-        }
-        zofka.turnLeft(90);
     }
 
     public void drawTriangle(float height, float base, Color color) {
@@ -72,12 +69,11 @@ public class HlavniProgram {
         zofka.turnRight(180 - Math.toDegrees(angle));
     }
 
-
-    public void drawCircle(int pericular, Color color) {
+    public void drawCircle(int radius, Color color) {
         zofka.penDown();
         for (int i = 0; i < 360; i++) {
             zofka.setPenColor(color);
-            zofka.move(2 * Math.PI * pericular / 360);
+            zofka.move(2 * Math.PI * radius / 360);
             zofka.turnRight(1);
         }
         zofka.penUp();
