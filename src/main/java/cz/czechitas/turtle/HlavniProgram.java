@@ -65,7 +65,7 @@ public class HlavniProgram {
         zofka.penUp();
     }
 
-    //FULLY AWARE THAT THIS METHOD IS UNUSED, JUST THINK I MIGHT NEED IT FOR THE NEXT HOMEWORKS
+    //FULLY AWARE THAT THIS METHOD IS UNUSED, JUST THINK I MIGHT NEED IT FOR NEXT HOMEWORKS
     public void drawEquilateralTriangle(float sideA, Color color) {
         zofka.setPenColor(color);
         zofka.penDown();
@@ -102,21 +102,21 @@ public class HlavniProgram {
         zofka.penUp();
     }
 
-    public void drawSnowmanBody(int pericular, Color color) {
+    public void drawSnowmanBody(int radius, Color color) {
         zofka.penUp();
         for (int i = 0; i < 3; i++) {
             zofka.turnRight(180);
-            zofka.move(pericular + i * 20);
+            zofka.move(radius + i * 20);
             zofka.turnRight(90);
-            zofka.move(pericular + i * 20);
+            zofka.move(radius + i * 20);
             zofka.turnRight(90);
             zofka.penDown();
-            drawCircle(pericular + i * 20, color);
+            drawCircle(radius + i * 20, color);
             zofka.penUp();
             zofka.turnRight(90);
-            zofka.move(pericular + i * 20);
+            zofka.move(radius + i * 20);
             zofka.turnRight(90);
-            zofka.move(pericular + i * 20);
+            zofka.move(radius + i * 20);
             zofka.turnRight(180);
         }
     }
